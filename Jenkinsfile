@@ -2,16 +2,14 @@ pipeline {
     agent any
 
     tools {
-    maven 'Maven-3.9.12'
-    jdk 'jdk-21'
-}
-
+        maven 'Maven-3.9.12'
+        jdk 'jdk-21'
+    }
 
     stages {
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/DarshanG256/devops4'
-                 
             }
         }
 
@@ -31,7 +29,7 @@ pipeline {
                     )
                 ],
                 contextPath: 'my-webapp',
-                war: 'target/my-webapp.war'
+                war: 'target/webapp.war'
             }
         }
     }
